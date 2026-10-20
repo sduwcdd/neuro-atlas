@@ -1,0 +1,8 @@
+site-deploy*.tar.gz
+gpu-training-output/
+__pycache__/
+.ipynb_checkpoints/
+.openai/
+.env
+.env.*
+node_modules/

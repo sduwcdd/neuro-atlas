@@ -1,0 +1,20 @@
+name: dl-gpu
+channels:
+  - conda-forge
+  - nodefaults
+dependencies:
+  - python=3.11
+  - pip
+  - pip:
+      - --extra-index-url https://download.pytorch.org/whl/cu128
+      - torch==2.9.1+cu128
+      - torchvision==0.24.1+cu128
+      - numpy
+      - scipy
+      - matplotlib
+      - pandas
+      - scikit-learn
+      - gymnasium[classic-control]
+      - stable-baselines3
+      - ipykernel
+      - tensorboard

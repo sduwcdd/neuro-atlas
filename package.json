@@ -1,0 +1,1 @@
+{"name":"neuro-atlas","version":"1.0.0","private":true,"type":"module","description":"Interactive Chinese deep learning knowledge map","license":"MIT","repository":{"type":"git","url":"https://github.com/sduwcdd/neuro-atlas.git"},"homepage":"https://neuro-atlas-learn.weichengdu02.chatgpt.site/","scripts":{"start":"node server.mjs"}}

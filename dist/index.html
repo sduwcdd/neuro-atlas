@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#101513"><meta name="description" content="用 28 个基础实验和 14 门经典算法专题，理解深度学习与强化学习。调参数、看计算、做小测，从神经元到注意力。">
+  <title>神经漫游 NEURO ATLAS · 深度学习动态知识地图</title>
+  <link rel="icon" href="./icon.svg" type="image/svg+xml"><link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<aside class="sidebar">
+  <a href="#" class="brand" aria-label="神经漫游首页"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M9 29V11L31 29V11M9 28H31"/><circle cx="9" cy="11" r="3"/><circle cx="31" cy="29" r="3"/></svg><span>神经漫游<small>NEURO ATLAS</small></span></a>
+  <div class="side-label">学习空间 <span>01 / EXPLORE</span></div>
+  <button class="side-link active" id="allNav"><span>◈</span> 动态知识地图 <i>28</i></button>
+  <button class="side-link" id="domainNav"><span>⌘</span> 领域与经典算法 <i>14</i></button>
+  <button class="side-link" id="pathNav"><span>⌁</span> 推荐学习路线</button>
+  <button class="side-link" id="savedNav"><span>☆</span> 我的收藏 <i id="savedCount">0</i></button>
+  <div class="side-label chapter-label">知识章节</div>
+  <nav id="chapterNav" aria-label="按章节筛选"></nav>
+  <div class="side-bottom"><div class="progress-caption"><span>你的探索进度</span><b id="progressText">0 / 42</b></div><div class="progress-track"><span id="progressBar"></span></div><p>理解从一次小小的尝试开始。</p><button id="helpBtn">学习指南 <span>↗</span></button></div>
+</aside>
+<div class="workspace">
+  <header class="topbar"><div class="breadcrumb">学习空间 <span>/</span> <strong>动态知识地图</strong></div><div class="top-actions"><span class="local-tag"><i></i> 进度保存在此设备</span><button class="round" id="motionBtn" aria-label="暂停全部动画" title="暂停全部动画">Ⅱ</button><button class="avatar" id="progressBtn" aria-label="查看学习进度">N</button></div></header>
+  <main>
+    <section class="hero">
+      <div class="hero-copy"><div class="eyebrow"><span></span> FOR CURIOUS MINDS · 给每一个好奇的你</div><h1>让深度学习，<br><em>一眼看懂。</em></h1><p>抽象的原理，变成眼前的变化。<br>在可玩的知识地图里，建立你的第一份深度学习直觉。</p><div class="hero-actions"><button class="primary" id="startBtn">开始第一场实验 <span>↗</span></button><button class="text-btn" id="exploreBtn">自由探索地图 <span>↓</span></button></div><div class="hero-meta"><span><b>28</b> 个基础实验</span><span><b>7</b> 个学习方向</span><span><b>14</b> 个经典算法</span></div></div>
+      <div class="hero-visual"><div class="visual-top"><span><i></i> LIVE NEURAL NETWORK</span><span>2 → 4 → 3 → 1</span></div><canvas id="heroCanvas" aria-label="神经网络信号逐层传递的动态示意图"></canvas><div class="visual-bottom"><span><i class="cyan-dot"></i> 输入信号</span><span class="flow-label">前向传播 <b>→</b></span><span><i class="lime-dot"></i> 预测输出</span></div><div class="float-note"><span>一个小小的神经元，<br>是一切的起点。</span><svg viewBox="0 0 60 35"><path d="M2 3 Q24 35 55 28 M46 17 L55 28 L49 28"/></svg></div></div>
+    </section>
+    <section class="domain-section" id="domainSection"><div class="section-heading"><div><div class="eyebrow dim">FIND YOUR DIRECTION</div><h2>从基础出发，找到你的学习方向<span>7 个方向 · 14 门算法课</span></h2></div><button class="outline" id="allAlgorithms">查看全部经典算法 ↗</button></div><p class="domain-intro">先看它解决什么问题，再沿着数据、结构、目标与训练流程走一遍。以下是入门导航，方向之间存在交叉。</p><div class="domain-cards" id="domainCards"></div></section>
+    <section class="map-section" id="knowledgeMap"><div class="section-heading"><div><div class="eyebrow dim">THE KNOWLEDGE MAP</div><h2 id="mapTitle">从一颗神经元，走向整个网络<span id="resultCount">28 个基础实验</span></h2></div><button class="outline" id="routeBtn">⌁ 学习路线</button></div>
+      <div class="map-toolbar"><div class="filters" id="filters" aria-label="知识分类"></div><label class="search"><svg viewBox="0 0 20 20"><circle cx="8" cy="8" r="5.5"/><path d="m12 12 5 5"/></svg><input id="searchInput" type="search" placeholder="搜索概念 / 关键词" aria-label="搜索概念或关键词"><kbd>/</kbd></label></div>
+      <div class="map-hint"><span><i></i> 每张卡片都在演示一个原理，点击进入交互实验</span><span>观察 → 尝试 → 理解</span></div>
+      <div class="cards" id="cards"></div><div id="empty" hidden><span>⌕</span><h3>这里还没有找到概念</h3><p>试试“梯度”“图像”或“attention”，也可以切回全部概念。</p><button class="outline" id="clearBtn">查看全部概念</button></div>
+    </section>
+    <section class="learning-note"><span class="note-symbol">✳</span><div><h3>不用先懂公式。先让直觉发生。</h3><p>看一看信号怎么流，改一改参数会怎样，再用一个小问题检验理解。</p></div><button class="text-btn" id="randomBtn">随机探索一个概念 ↗</button></section>
+    <footer><span>神经漫游 <small>NEURO ATLAS</small></span><span>把复杂留给计算，把好奇留给你。</span><button id="sourcesBtn">内容与参考资料 ↗</button></footer>
+  </main>
+</div>
+<dialog id="labDialog" aria-labelledby="labTitle"><div class="lab-header"><div><span id="labEyebrow" class="eyebrow"></span><h2 id="labTitle"></h2></div><div><button class="round" id="bookmarkBtn" aria-label="收藏此概念">☆</button><button class="round" id="closeLab" aria-label="关闭实验">×</button></div></div><div class="lab-body"><div class="lab-main"><div class="lab-stage"><div class="stage-label"><span id="stageTitle">交互实验</span><span id="stageStatus">实时计算</span></div><canvas id="labCanvas" aria-label="概念交互可视化"></canvas><div id="labReadout" class="readout" aria-live="polite"></div></div><div id="controls" class="controls"></div><div id="actionRow" class="action-row"></div><div class="formula-box"><span>背后的计算</span><code id="formula"></code></div><p class="demo-note" id="demoNote"></p></div><div class="lab-explanation"><div class="pill">先建立直觉</div><p id="intuition"></p><h3>观察这三件事</h3><ol id="steps"></ol><div class="quiz"><span class="eyebrow">CHECK YOUR INTUITION</span><h3 id="quizQuestion"></h3><div id="quizOptions"></div><p id="quizFeedback" aria-live="polite"></p></div><a id="sourceLink" target="_blank" rel="noopener">阅读官方参考 ↗</a></div></div><section id="coursePanel" class="course-panel" hidden></section><div class="lab-footer"><span id="labProgress"></span><button id="nextBtn" class="primary">下一个概念 →</button></div></dialog>
+<dialog id="infoDialog" aria-labelledby="infoTitle"><button class="round info-close" id="closeInfo" aria-label="关闭">×</button><div id="infoContent"></div></dialog>
+<div id="toast" role="status"></div>
+<script type="module" src="./app.js"></script>
+</body></html>
